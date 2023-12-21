@@ -3,8 +3,8 @@ import React from 'react'
 
 const LoginScreen = () => {
   return (
-    <View>
-      <Text>L</Text>
+    <View >
+      <Text>Login screen </Text>
     </View>
   )
 }
