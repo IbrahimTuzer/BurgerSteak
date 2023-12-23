@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { Ionicons } from '@expo/vector-icons';
 import { useDispatch, useSelector } from 'react-redux';
-import {SignUpButton, LoadingPage} from '../components';
+import { LoadingPage, MyButton, SignUpButton} from '../components';
 import { register } from '../redux/userSlice';
 
 
@@ -92,10 +92,13 @@ useEffect(() => {
        </View>
 
        <View style={styles.buttonContainer}>
-          <SignUpButton
+          
+           <MyButton 
            title='Sign Up'
-           handleSignUpButton={SignUpData}
+           handleButton={SignUpData}
            isDisable={isButtonDisable}/>
+
+          
        
           <Pressable style={styles.loginButton}
                      onPress={()=> navigation.navigate("LoginScreen")}>
@@ -103,16 +106,6 @@ useEffect(() => {
           </Pressable>
        </View>
     
-        
-        
-
-
-
-
-
-
-
-
 
       </View>
     </SafeAreaView>
