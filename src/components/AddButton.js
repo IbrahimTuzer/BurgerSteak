@@ -1,12 +1,19 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Pressable } from 'react-native';
 
-const AddButton = () => {
+const AddButton = (props) => {
   const [count, setCount] = useState(0);
+ 
+
+  
 
   const handlePress = (increment) => {
     setCount((prevCount) => (increment ? prevCount + 1 : prevCount - 1));
   };
+
+ 
+
+
 
   return (
     <View style={styles.container}>

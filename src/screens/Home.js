@@ -1,21 +1,45 @@
-import { StyleSheet, Text, View, Image, TextInput, ScrollView, FlatList} from 'react-native'
-import React, { useState } from 'react'
+import { StyleSheet, Text, View, Image, TextInput, ScrollView, FlatList, Pressable} from 'react-native'
+import React, { useEffect, useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { AntDesign } from '@expo/vector-icons';
 import {ScroolFood, FlatBurger} from "../components";
-import burgerData from '../components/data';
+import { sendData, getData} from '../../api';
 
 
 const Home = () => {
 
-    const [burger, setBurger] = useState([...burgerData])
+   
     const [searchText, setSearchText] = useState('');
+    const [burgersData, setBurgersData] = useState([])
+ 
+
+
+    useEffect(() => {
+     // sendData()
+    }, [])
+    
+
+    useEffect(() => {
+      const data = async () => {
+        try {
+          const value = await getData();
+          setBurgersData(value)
+        } catch (error) {
+          console.error("Error fetching data:", error);
+          return null
+        }
+      };
+
+      data()
+    }, [getData])
+    
 
     const filterBurgers = () => {
-        return burger.filter(item =>
+        return burgersData.filter(item =>
           item.name.toLowerCase().includes(searchText.toLowerCase())
         );
       };
+
 
   return (
     <SafeAreaView style={styles.container}>

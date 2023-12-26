@@ -5,13 +5,14 @@ import { useNavigation } from '@react-navigation/native';
 const FlatBurger = (props) => {
   const navigation = useNavigation();
   const [isPressed, setIsPressed] = useState(false);
-
+  const imageBurger = props.data.image
   const handlePress = () => {
    
     navigation.navigate('DetailPage', { data: props.data });
     setIsPressed(true);
   };
-
+  
+   
   return (
     <Pressable
       onPress={handlePress}
@@ -20,11 +21,11 @@ const FlatBurger = (props) => {
       style={({ pressed }) => [
         styles.container,
         {
-          backgroundColor: pressed ? "orange" : isPressed ? "orange" : "#D9D9D9",
+          backgroundColor: pressed ? "orange"  : "#D9D9D9",
         },
       ]}
     >
-      <Image source={props.data.image} style={styles.image} />
+      <Image style={styles.image}  source={{ uri: props.data.image }} />
       <Text>{props.data.name}</Text>
       <View style={styles.ratingContainer}>
         <Image style={styles.star} source={require("../../assets/star.png")} />

@@ -34,7 +34,10 @@ const LoginScreen = ({navigation}) => {
     dispatch(login({email, password}))
   }
   
- 
+   useEffect(() => {
+     dispatch(autoLogin())
+   }, [])
+   
   
  
   return (

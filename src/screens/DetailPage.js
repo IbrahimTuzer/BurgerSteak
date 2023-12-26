@@ -20,7 +20,7 @@ const DetailPage = ({ route}) => {
         <AntDesign name="hearto" size={34} color="black" />
       </View>
 
-      <Image source={data.image} style={styles.image} />
+      <Image source={{uri : data.image}} style={styles.image} />
 
       <View style={styles.ratinAndButtonContainer}>
         <View style={styles.ratingContainer}>
@@ -29,6 +29,7 @@ const DetailPage = ({ route}) => {
         </View>
 
         <AddButton />
+        
       </View>
 
       <View style={styles.descriptionContainer}>
@@ -66,10 +67,11 @@ const styles = StyleSheet.create({
   },
   image: {
     flex: 3,
-    width: 322,
+    width: "95%",
     height: 256,
-    borderRadius: 282.5,
+    borderRadius: 30,
     marginBottom: 10,
+    
   },
   name: {
     fontSize: 20,
