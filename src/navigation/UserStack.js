@@ -12,7 +12,8 @@ const UserStack = () => {
 
       <Stack.Screen name='Home' component={Home}/>
       <Stack.Screen name='DetailPage' component={DetailPage}/>
-     
+      <Stack.Screen name='Menu' component={Menu}/>
+      
 
     </Stack.Navigator>
   )

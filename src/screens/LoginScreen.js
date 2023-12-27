@@ -92,7 +92,7 @@ const LoginScreen = ({navigation}) => {
           </Pressable>
        </View>
     
-        
+       
   
 
       </View>

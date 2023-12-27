@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, TextInput, ScrollView, FlatList, Pressable} from 'react-native'
+import { StyleSheet, Text, View, Image, TextInput, FlatList, Pressable} from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { AntDesign } from '@expo/vector-icons';
@@ -6,7 +6,7 @@ import {ScroolFood, FlatBurger} from "../components";
 import { sendData, getData} from '../../api';
 
 
-const Home = () => {
+const Home = ({navigation}) => {
 
    
     const [searchText, setSearchText] = useState('');
@@ -45,8 +45,11 @@ const Home = () => {
     <SafeAreaView style={styles.container}>
 
       <View style={styles.topBarContainer}>
+    
+        <Pressable onPress={()=> navigation.navigate("Menu")}>
         <Image style={styles.menuImage}
                source={require("../../assets/menu.png")}/>
+       </Pressable>
         <Text style={styles.burgerText}>BURGER STEAK HOUSE</Text>
         <Image style={styles.menuImage}
                source={require("../../assets/user.png")}/>

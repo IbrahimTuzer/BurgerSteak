@@ -3,6 +3,7 @@ import LoginScreen from "./LoginScreen";
 import Register from "./Register";
 import Home from "./Home";
 import DetailPage from "./DetailPage";
+import Menu from "./Menu";
 
 
 
@@ -12,5 +13,6 @@ export{
     Register,
     Home,
     DetailPage,
+    Menu,
     
 }
